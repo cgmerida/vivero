@@ -28,3 +28,14 @@
     </a>
 </li>
 @endcan
+
+@can('plants.index')
+<li class="nav-item">
+    <a class='sidebar-link' href="{{ route('plants.index') }}">
+        <span class="icon-holder">
+            <i clas s="c-green-500 fa fa-envira"></i>
+        </span>
+        <span class="title">Plantas</span>
+    </a>
+</li>
+@endcan
