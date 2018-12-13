@@ -24,5 +24,6 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
+    Route::resource('plants', 'PlantController');
     Route::view('admin', 'admin.dashboard.index')->name('admin.dash');
 });

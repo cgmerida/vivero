@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Plant;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,13 @@ Route::get('users', function () {
 Route::get('roles', function () {
     return datatables(Caffeinated\Shinobi\Models\Role::all())
         ->addColumn('actions', 'roles.partials.actions')
+        ->rawColumns(['actions'])
+        ->toJson();
+});
+
+Route::get('plants', function () {
+    return datatables(App/Plant::all())
+        ->addColumn('actions', 'plants.partials.actions')
         ->rawColumns(['actions'])
         ->toJson();
 });
